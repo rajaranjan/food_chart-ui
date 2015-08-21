@@ -1,0 +1,87 @@
+<html>
+<head><title>Men u Item Select </title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script language ="javascript" src="JoesCafeFood.js"></script>
+</head>
+<body bgcolor="#FFFFFF" text="#00000" onload="initialize('menuTable',cafeMenuXML');document.forms[0].txtBillAmt.value=calculateBill(menuTable);">
+<!--XML Body starts -->
+<xml id="cafeMenuXML">
+  <cafeMenu>
+   <section name="Side Dishes">
+    <entree vegeterian = "true">
+	  <item>Potato Salad</item>
+	  <price>2.05</price>
+	</entree>
+	<entree>
+	  <item>Joe's French Fries</item>
+	  <price>8.50</price>
+	</entree>
+	<entree>
+	  <item>Hueves Ranchers</item>
+	  <price>8.50</price>
+	</entree>
+  </section>
+  <section name="Breakfast">
+   <entree>
+     <item>Two Eggs,any style</item>
+	 <price>2.00</price>
+   </entree>
+   <entree>
+     <item>Joe's Famous papaer and eggs</item>
+	 <price>6.00</price>
+   </entree>
+   <entree vegetarian="true">
+     <item>Pasta Salad</item>
+	 <price>2.00</price>
+   </entree>
+   <entree vegetarian="true">
+     <item>Bowl of fruit</item>
+	 <price>5.00</price>
+   </entree>
+  </section>
+  <section name="Launch">
+    
+  </section>
+  <section name="Dinner">
+    <entree>
+	 <item>New York Steak</item>
+	 <price>8.99</price>
+	</entree>
+	<entree>
+	 <item>Chiken Basics</item>
+	 <price>8.99</price>
+	</entree>
+	<entree vegetarian="true">
+	 <item>Grilled Mashroom</item>
+	 <price>8.99</price>
+	</entree>
+  </section>
+  </cafeMenu>
+ </xml>
+ <h2>Sample Menu</h2>
+ <p>Select Your favourite dish</p>
+ <table id="menuTable" border="1" class="indent">
+   <thead>
+     <tr>
+	   <th colspan="3">Joe's Cafe Menu</th>
+	 </tr>
+	 <tr>
+	   <th>&nbsp;</th>
+	   <th><strong>item</strong></th>
+	   <th>Price</th>
+	 </tr>
+   </thead>
+   <tbody>
+   </tbody>
+ </table>
+ <form class="indent">
+   <p>
+   <input type="button" name="btnCalcBill" value="calculate Bill" onClick="document.forms[0].txtBillAmount.value=calculateBill('menuTable')" />
+   Total:$
+   <innput type="text" name="txtBillAmount" />
+   <input type="checkbox" name="cbOpto" value="isVeg" onClick="highlightVegetarian(menuTable',this.checked)" />
+   Highlight Vegetarian Meals
+   </p>
+ </form>
+</body>
+</html>
